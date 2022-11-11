@@ -9,9 +9,7 @@ import { PizzaService, PizzaToppingDisplay } from '../pizza.service';
 export class PizzaToppingsComponent implements OnInit {
 
   // Magic DI, with TS ctor scoped parameters...
-  constructor(
-    public pizzaSvc: PizzaService
-  ) { }
+  constructor (public pizzaSvc: PizzaService) { }
 
   ngOnInit(): void {
     const pt = this.pizzaSvc.loadPizzaToppings();
@@ -27,15 +25,13 @@ export class PizzaToppingsComponent implements OnInit {
     return this.availablePizzaToppings
       .filter(x => x.checked)
       .reduce(
-        (acc, x) => acc + x.price
-        , 0
+        (acc, x) => acc + x.price, 0
       )
     ;
   };
 
   toggleAll = (check: boolean) => this.availablePizzaToppings =
     this.availablePizzaToppings.map(x => ({
-      ...x
-      , checked: check
+      ...x, checked: check
     }));  
 }
