@@ -6,9 +6,7 @@ export interface PizzaToppingDisplay {
   checked: boolean;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class PizzaService {
 
   constructor() { }
@@ -16,12 +14,36 @@ export class PizzaService {
   loadPizzaToppings = (): PizzaToppingDisplay[] => {
     const pizzaToppingsFromWeb = [
       {
-        name: 'Pepperoini'
-        , price: 1.5
+        name: 'Pepperoni'
+        , price: 2.50
+      }
+      , {
+        name: 'Italian Sausage'
+        , price: 2.00
+      }
+      , {
+        name: 'Ham'
+        , price: 3.00
+      }
+      , {
+        name: 'Green Peppers'
+        , price: 1.00
+      }
+      , {
+        name: 'Italian Sausage'
+        , price: 2.00
+      }
+      , {
+        name: 'Ham'
+        , price: 3.00
+      }
+      , {
+        name: 'Green Peppers'
+        , price: 1.00
       }
       , {
         name: 'Olives'
-        , price: 3
+        , price: 1.00
       }
     ];
 
@@ -30,4 +52,14 @@ export class PizzaService {
       , checked: false
     }));
   }
+
+  loadSides = () => {
+    return [
+      "Garlic Bread"
+      , "Salad"
+      , "Soup"
+      , "Cinnamon Sticks"
+    ];
+  };
+  
 }
